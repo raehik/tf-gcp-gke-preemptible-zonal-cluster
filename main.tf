@@ -6,6 +6,7 @@ terraform {
 }
 
 data "google_container_engine_versions" "zone" {
+  project        = var.project
   location       = var.zone
   version_prefix = "$(var.k8s_minor_version}."
 }
