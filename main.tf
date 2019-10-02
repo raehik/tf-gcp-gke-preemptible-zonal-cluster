@@ -49,6 +49,8 @@ resource "google_container_node_pool" "preempt" {
       disable-legacy-endpoints = "true"
     }
 
+    disk_size_gb = var.node_disk_size_gb
+
     # TODO understand this better
     oauth_scopes = [
       "https://www.googleapis.com/auth/logging.write",

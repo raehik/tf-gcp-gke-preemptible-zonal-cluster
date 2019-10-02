@@ -20,3 +20,6 @@ variable "node_machine_type" {
 variable "node_count" {
   type = number
 }
+variable "node_disk_size_gb" {
+  type = number
+}
