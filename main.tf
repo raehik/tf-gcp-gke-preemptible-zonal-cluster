@@ -20,6 +20,10 @@ resource "google_container_cluster" "cluster" {
 
   resource_labels = var.resource_labels
 
+  # replace built-in legacy cluster services with K8s ones (must both be set)
+  monitoring_service = "monitoring.googleapis.com/kubernetes"
+  logging_service = "logging.googleapis.com/kubernetes"
+
   # We can't create a cluster with no node pool defined, but we want to only use
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
